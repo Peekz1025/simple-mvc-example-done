@@ -3,6 +3,8 @@ const models = require('../models');
 
 // get the Cat model
 const Cat = models.Cat.CatModel;
+const Dog = models.Dog.DogModel;
+
 
 // default fake data so that we have something to work with until we make a real Cat
 const defaultData = {
@@ -12,6 +14,7 @@ const defaultData = {
 
 // object for us to keep track of the last Cat we made and dynamically update it sometimes
 let lastAdded = new Cat(defaultData);
+let lastAddedDog = new Dog(defaultData);
 
 // function to handle requests to the main page
 // controller functions in Express receive the full HTTP request
@@ -43,6 +46,10 @@ const readAllCats = (req, res, callback) => {
   Cat.find(callback);
 };
 
+const readAllDogs = (req, res, callback) => {
+  Dog.find(callback);
+};
+
 
 // function to find a specific cat on request.
 // Express functions always receive the request and the response.
@@ -66,6 +73,21 @@ const readCat = (req, res) => {
   // Behind the scenes this runs the findOne method.
   // You can find the findByName function in the model file.
   Cat.findByName(name1, callback);
+};
+
+//i added dog funcition
+const readDog = (req, res) => {
+  const name1 = req.query.name;
+
+  const callback = (err, doc) => {
+    if (err) {
+      return res.json({ err }); // if error, return it
+    }
+
+    return res.json(doc);
+  };
+
+  Dog.findByName(name1, callback);
 };
 
 // function to handle requests to the page1 page
@@ -253,6 +275,7 @@ module.exports = {
   page1: hostPage1,
   page2: hostPage2,
   page3: hostPage3,
+  page4: hostPage4,
   readCat,
   getName,
   setName,
