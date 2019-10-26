@@ -1,8 +1,8 @@
 {
-  "name": "simple-mvc-example",
+  "name": "simple-models-ice",
   "version": "0.0.0",
   "engines": {
-    "node": "10.16.0",
+    "node": "10.16.x",
     "npm": "6.9.0"
   },
   "description": "A simple Express MVC using only static files",
@@ -14,7 +14,7 @@
     "test": "echo \"tests complete\""
   },
   "author": "Robby Piwko",
-  "license": "ISC",
+  "license": "UNLICENSED",
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-preset-env": "^1.7.0",
@@ -32,5 +32,13 @@
     "mongodb": "^3.3.3",
     "mongoose": "^5.7.7",
     "serve-favicon": "^2.5.0"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tec1850/simple-mvc-example-done.git"
+  },
+  "bugs": {
+    "url": "https://github.com/tec1850/simple-mvc-example-done/issues"
+  },
+  "homepage": "https://github.com/tec1850/simple-mvc-example-done#readme"
 }

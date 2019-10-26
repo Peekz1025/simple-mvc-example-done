@@ -6,18 +6,18 @@
 </head>
 
 <body>
-  <h1>Welcome to Page 1</h1>
+  <h1>Welcome to Page 4</h1>
 
   <a href="/">Home</a>
+  <a href="/page1">Page 1</a>
   <a href="/page2">Page 2</a>
   <a href="/page3">Page 3</a>
-  <a href="/page4">Page 4</a>
-  <a href="/getCatName">Show Name</a>
+  <a href="/getDogName">Show Name</a>
 
-  {{#if cats}}
+  {{#if dogs}}
     <ul>
-      {{#each cats}}
-        <li> {{this.name}} has {{this.bedsOwned}} beds</li>
+      {{#each dogs}}
+        <li> {{this.name}} is {{this.age}} years old</li>
       {{/each}}
     </ul>
   {{/if}}

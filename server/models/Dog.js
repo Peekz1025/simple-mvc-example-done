@@ -1,8 +1,8 @@
+//copied cat.js and adjusted for new params
+
 const mongoose = require('mongoose');
 
-
 mongoose.Promise = global.Promise;
-
 
 let DogModel = {};
 
@@ -20,7 +20,7 @@ const DogSchema = new mongoose.Schema({
     trim: true,
     unique: true,
   },
-  
+
   age: {
     type: Number,
     min: 0,
@@ -34,8 +34,8 @@ const DogSchema = new mongoose.Schema({
 
 });
 
-DogSchema.statics.sayName = (Dog) => {
-  console.log(Dog.name);
+DogSchema.statics.sayName = (dog) => {
+  console.log(dog.name);
 };
 
 DogSchema.statics.findByName = (name, callback) => {
@@ -46,9 +46,9 @@ DogSchema.statics.findByName = (name, callback) => {
   return DogModel.findOne(search, callback);
 };
 
-
 DogModel = mongoose.model('Dog', DogSchema);
 
 
+// exports
 module.exports.DogModel = DogModel;
 module.exports.DogSchema = DogSchema;
